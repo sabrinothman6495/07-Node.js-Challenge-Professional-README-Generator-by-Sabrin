@@ -6,12 +6,17 @@ function generatelicenceBadge(license) {
         return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     } else if (license === "GPL") {
         return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-    } else if (license === "BSD") {
-        return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+    } else if (license === "ISC") {
+        return "[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
     } else {
         return "";
     }
 }
+generatelicenceBadge("MIT");    
+generatelicenceBadge("Apache");
+generatelicenceBadge("GPL");
+generatelicenceBadge("ISC");
+generatelicenceBadge("None");
 
 // TODO: Create a function that returns the license link
 function renderLicenseLink(license) {
@@ -21,12 +26,16 @@ function renderLicenseLink(license) {
         return "[Apache](https://opensource.org/licenses/Apache-2.0)";
     } else if (license === "GPL") {
         return "[GPL](https://www.gnu.org/licenses/gpl-3.0)";
-    } else if (license === "BSD") {
-        return "[BSD](https://opensource.org/licenses/BSD-3-Clause)";
+    } else if (license === "ISC") {
+        return "[ISC](https://opensource.org/license/isc-license-txt)";
     } else {
         return "";
     }
 }
+renderLicenseLink("MIT");
+renderLicenseLink("Apache");
+renderLicenseLink("GPL");   
+renderLicenseLink("ISC");
 
 // TODO: Create a function that returns the license section of README
 function renderLicenseSection(license) {
@@ -52,7 +61,9 @@ ${data.contribution}
 ${data.test}
 ## License
 ${renderLicenseSection(data.license)}
-## Questions
+${generatelicenceBadge(data.license)}
+## Get in contact:
+
 - GitHub: [${data.github}]
 - Email: ${data.email}`;
     return markdown;
