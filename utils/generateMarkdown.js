@@ -51,6 +51,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
     const markdown = `# ${data.title}
 ## ${data.description}
+## ${data.tableofcontents}
 ## Installation
 ${data.installation}
 ## Usage
