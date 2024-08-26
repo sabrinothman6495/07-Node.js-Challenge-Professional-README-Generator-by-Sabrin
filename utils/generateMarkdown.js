@@ -60,7 +60,7 @@ ${data.contribution}
 ## Tests
 ${data.test}
 ## License
-${renderLicenseSection(data.license)}
+${renderLicenseLink(data.license)}
 ${generatelicenceBadge(data.license)}
 ## Get in contact:
 
