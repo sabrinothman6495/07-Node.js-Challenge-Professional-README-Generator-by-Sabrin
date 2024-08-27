@@ -3,7 +3,7 @@ function generatelicenceBadge(license) {
     if (license === "MIT") {
         return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license === "Apache") {
-        return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        return "[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     } else if (license === "GPL") {
         return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
     } else if (license === "ISC") {
@@ -43,10 +43,14 @@ function renderLicenseSection(license) {
         return "";
     } else {
         return `## License
-        This project is licensed under the ${license} license.`;
+        This project is licensed under the ${renderLicenseLink(license)} ${generatelicenceBadge(license)} license.`;
     }
 }
-
+renderLicenseSection("MIT");
+renderLicenseSection("Apache");
+renderLicenseSection("GPL");
+renderLicenseSection("ISC");
+renderLicenseSection("None");
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     const markdown = `# ${data.title}

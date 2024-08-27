@@ -18,6 +18,11 @@ const questions = [
     },
     {
         type: "input",
+        name: "tableofcontents",
+        message: "Please provide a table of contents for your project.",
+    },
+    {
+        type: "input",
         name: "installation",
         message: "What are the installation instructions for your project?",
     },
@@ -40,7 +45,7 @@ const questions = [
         type: "list",
         name: "license",
         message: "Please choose a license for your project.",
-        choices: ["MIT", "GNU GPLv3", "Apache 2.0", "ISC", "None"],
+        choices: ["MIT", "GPL", "Apache 2.0", "ISC", "None"],
     },
     {
         type: "input",
