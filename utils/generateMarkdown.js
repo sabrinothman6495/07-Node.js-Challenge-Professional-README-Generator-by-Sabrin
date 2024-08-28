@@ -1,5 +1,5 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
-function generatelicenceBadge(license) {
+function generateLicenceBadge(license) {
     if (license === "MIT") {
         return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     } else if (license === "Apache 2.0") {
@@ -12,11 +12,12 @@ function generatelicenceBadge(license) {
         return "";
     }
 }
-generatelicenceBadge("MIT");    
-generatelicenceBadge("Apache");
-generatelicenceBadge("GPL");
-generatelicenceBadge("ISC");
-generatelicenceBadge("None");
+generateLicenceBadge("license");
+generateLicenceBadge("Apache 2.0");
+generateLicenceBadge("GPL");
+generateLicenceBadge("ISC");
+generateLicenceBadge("None");
+generateLicenceBadge("MIT");
 
 // TODO: Create a function that returns the license link
 function renderLicenseLink(license) {
@@ -38,40 +39,51 @@ renderLicenseLink("GPL");
 renderLicenseLink("ISC");
 
 // TODO: Create a function that returns the license section of README
-function renderLicenseSection(license) {
-    if (license === "None") {
-        return "";
-    } else {
-        return `## License
-        This project is licensed under the ${renderLicenseLink(license)} ${generatelicenceBadge(license)} license.`;
+function generateLicenseBadge(license) {
+    if (license !== 'None') {
+        return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
     }
+    return '';
 }
-renderLicenseSection("MIT");
-renderLicenseSection("Apache");
-renderLicenseSection("GPL");
-renderLicenseSection("ISC");
-renderLicenseSection("None");
+function renderLicenseSection(license) {
+    if (license !== 'None') {
+        return `## License\nThis project is licensed under the ${renderLicenseLink(license)} license. ${generateLicenseBadge(license)}`;
+    }
+    return '';
+}
+
 // TODO: Create a function to generate markdown for README
+
 function generateMarkdown(data) {
-    const markdown = `# ${data.title}
-## ${data.description}
-## ${data.tableofcontents}
+    return `
+# ${generateLicenseBadge(data.license)}
+# ${data.title}
+
+## Description
+${data.description}
+
+## Table of Contents
+${data.tableOfContents}
+
 ## Installation
 ${data.installation}
+
 ## Usage
 ${data.usage}
+
 ## Contribution
 ${data.contribution}
-## Tests
-${data.test}
-## License
-${renderLicenseLink(data.license)}
-${generatelicenceBadge(data.license)}
-## Get in contact:
 
-- GitHub: [${data.github}]
-- Email: ${data.email}`;
-    return markdown;
+## Tests
+${data.tests}
+
+## License
+This project is licensed under the ${renderLicenseSection(data.license)} license.
+
+## Questions
+For any questions, please contact me at [${data.email}](mailto:${data.email}). You can also find more of my work at ${data.githubLink}.
+`;
 }
+
 
 export default generateMarkdown;

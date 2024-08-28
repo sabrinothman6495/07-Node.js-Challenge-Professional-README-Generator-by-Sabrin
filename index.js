@@ -4,6 +4,7 @@ import inquirer from "inquirer";
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
 
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -58,21 +59,27 @@ const questions = [
         message: "What is your email address?",
     },
 ];
-
+// create a function to link github username to
+function generateGitHubLink(github) {
+    return `[GitHub Profile](https://github.com/${github})`;
+}
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, data);
-
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log("Success! Your README.md file has been generated")
+    );
 }
+
+
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
+        data.githubLink = generateGitHubLink(data.github);
         writeToFile("README.md", generateMarkdown(data));
     });
 }
-
 
 
 // Function call to initialize app
