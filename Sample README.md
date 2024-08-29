@@ -4,18 +4,6 @@
 
 ## Description
 A command line application, generated from our integrated terminal.
-```
-When I invoke my app by opening it in integrated I am prompted with questions that willout put a professional read me file that includes the follwing information and sections :
-Table of Contents
-Installation
-Usage
-Contribution
-Questions
-a link to my github  
-my email address hyperlink
-
-```
-## Video Demonstration Link
 
 ## Table of Contents
 - [Installation](#installation)
@@ -27,20 +15,19 @@ my email address hyperlink
 
 
 ## Installation
-NPM intall
-Node v20.16.0
-Inquirer package
+node and terminal
 
 ## Usage
-my project uses java script, npm installls, and the commandline interface to generate a README.MD file
+To use this app youll need to download the two Java Script files and download Node. 
 
 ## Contribution
-contributions are welcome!
+Welcome!
 
 ## Tests
 N/A
 
 ## License
+This project is licensed under the ## License
 This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license. ![License](https://img.shields.io/badge/License-MIT-blue.svg) license.
 
 ## Questions
