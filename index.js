@@ -38,11 +38,6 @@ const questions = [
         message: "What are the contribution guidelines for your project?",
     },
     {
-        type: "input",
-        name: "test",
-        message: "What are the test instructions for your project?",
-    },
-    {
         type: "list",
         name: "license",
         message: "Please choose a license for your project.",
