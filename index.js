@@ -3,6 +3,7 @@
 import inquirer from "inquirer";
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
+import { type } from "os";
 
 
 // TODO: Create an array of questions for user input
@@ -31,6 +32,11 @@ const questions = [
         type: "input",
         name: "usage",
         message: "What is the usage information for your project?",
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "What are the test instructions for your project?",
     },
     {
         type: "input",
