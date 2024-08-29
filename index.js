@@ -3,7 +3,6 @@
 import inquirer from "inquirer";
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
-import { type } from "os";
 
 
 // TODO: Create an array of questions for user input
@@ -17,11 +16,6 @@ const questions = [
         type: "input",
         name: "description",
         message: "Please provide a description of your project.",
-    },
-    {
-        type: "input",
-        name: "tableofcontents",
-        message: "Please provide a table of contents for your project.",
     },
     {
         type: "input",
@@ -65,10 +59,7 @@ const questions = [
         message: "What is your email address?",
     },
 ];
-// create a function to link github username to
-function generateGitHubLink(github) {
-    return `[GitHub Profile](https://github.com/${github})`;
-}
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -82,7 +73,6 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        data.githubLink = generateGitHubLink(data.github);
         writeToFile("README.md", generateMarkdown(data));
     });
 }
