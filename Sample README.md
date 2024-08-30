@@ -1,9 +1,9 @@
 
-# ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-# Professional ReadME Generator
+# ![License](https://img.shields.io/badge/License-ISC-blue.svg)
+# Professional read me generator
 
 ## Description
-A command line application, generated from our integrated terminal.
+using the CLI and integrated terminal, the user is prompted to answer questions that will generate a read me
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,20 +15,20 @@ A command line application, generated from our integrated terminal.
 
 
 ## Installation
-node and terminal
+node, inquirer packages, npm install
 
 ## Usage
-To use this app youll need to download the two Java Script files and download Node. 
+the user can use this by opening their integrated terminal, and inputting the command "node index.js
 
 ## Contribution
-Welcome!
+Contributions welcomed!
 
 ## Tests
 N/A
 
 ## License
 This project is licensed under the ## License
-This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license. ![License](https://img.shields.io/badge/License-MIT-blue.svg) license.
+This project is licensed under the [ISC](https://opensource.org/license/isc-license-txt) license. ![License](https://img.shields.io/badge/License-ISC-blue.svg) license.
 
 ## Questions
 For any questions, please contact me at [sabrinothman95@gmail.com](mailto:sabrinothman95@gmail.com). You can also find more of my work at [GitHub Profile](https://github.com/sabrinothman6495) 
